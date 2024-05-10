@@ -1,0 +1,381 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+    padding: 2% 0% 2% 0%;
+    height: 90vh;
+    overflow: hidden;
+    font-family: 'sarpanch';
+
+}
+
+#main_container {
+    /* background-color: green; */
+    height: 100%;
+    width: 70%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    gap: 10px;
+}
+
+#gameHead {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.gamebody {
+    /* background-color:rgba(82, 99, 97, 0.2); */
+    animation-name: changeGameBody;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.flexGamebody {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#lefthead {
+    display: flex;
+    flex-direction: row;
+    animation: fadeInDown 1s forwards;
+    font-family: 'Sarpanch';
+
+}
+
+#life,
+#timer,
+#score {
+    font-family: "Sarpanch", sans-serif;
+    color: white;
+    height: fit-content;
+}
+
+#hearts {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-top: 6%;
+}
+
+#lifesHearts {
+    display: flex;
+}
+
+#pause {
+    padding-top: 0.6vh;
+    height: fit-content;
+}
+
+#lefthead {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 3%;
+    font-size: large;
+}
+
+#test {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#presstostart {
+    position: absolute;
+    top: 56%;
+    animation-name: animationPressToStart;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transform: translate(50%);
+}
+
+#leftright {
+    /* position: absolute;
+    bottom: 0%;
+    left: 43%; */
+    position: absolute;
+    top: 66%;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+
+#bricksansball {
+    position: absolute;
+    top: 45%;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+
+#betterexp {
+    position: absolute;
+    bottom: 5%;
+    left: 73.5vw;
+    font-size: 1.2vw;
+    color: white;
+    font-family: 'Sarpanch';
+    transform: translate(-50%, -50%);
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(1);
+    }
+}
+
+@keyframes disp {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.disparition {
+    animation: disp 0.5s;
+}
+
+@keyframes animationPressToStart {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes changeGameBody {
+    0% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: rgba(82, 99, 97, 0.2);
+    }
+}
+
+.divAMover {
+    width: 150px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.ball {
+    /* position: absolute; */
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.setBrick {
+    width: 3.7%;
+    height: 3%;
+    border-radius: 3.5px;
+    position: absolute;
+}
+
+.divline {
+    width: 100%;
+    height: 4%;
+    margin-top: 0.8%;
+    display: flex;
+}
+
+#overlay{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#pauseMenu{
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+    height: 70%;
+    color: white;
+    display: grid;
+    grid-template-rows: auto ;
+}
+
+#gamepaused{
+    position: relative;
+}
+
+#gamepaused img{
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+}
+
+#restartreplayquit{
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+    font-size: large;
+    font-weight: bolder;
+    padding-top: 1%;
+}
+
+#pressh{
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    font-size: 1.5em;
+}
+#restart img{
+    width: 100px; 
+}
+
+#replay img{
+    width: 85px;
+}
+
+#restart, #replay {
+    padding: 0.3%;
+    height: fit-content;
+
+}
+#quit{
+    display: flex;
+    width: 60px;
+    height: fit-content;
+    justify-content: center;
+    padding: 0.3%;
+}
+
+#restart:hover, #replay:hover, #quit:hover{
+    background-color: gray;
+    border-radius: 5px;
+}
+
+#finish{
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+    height: 75%;
+    color: white;
+    display: grid;
+    grid-template-rows: 25% 20%  ;
+}
+
+#gameover, #yourscore{
+    display: flex;
+    justify-content: center;
+}
+
+#gameover img{
+    width: 50%;
+}
+#yourscore img{
+    width: 15%;
+}
+
+
+#restartquit{
+    display: flex;
+    justify-content: center;
+    /* padding-top: 7%; */
+    gap: 5%;
+    
+}
+
+
+
+#restartR, #quitQ{
+    height: fit-content;
+    display: flex;
+    padding: 0.5%;
+    justify-content: center;
+}
+
+#restartR:hover, #quitQ:hover{
+    background-color: gray;
+    border-radius: 10px;
+}
+.pausetestcl{
+    display: contents;
+}
+
+#myscore{
+    font-family: 'sarpanch';
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    height: fit-content;
+}
+
+#youwin{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#lgbreaker{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    width: 100%;
+}
+
+#yourtimeandscore{
+    color: white;
+    display: flex;
+    gap: 50px;
+}
+
+#rq{
+    display: flex;
+}
+
+#ywin{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#rq{
+    width: 50%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#shorcut{
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+}
+
+#rplay, #qquit{
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+
+#rplay:hover, #qquit:hover{
+    background-color: gray;
+}
